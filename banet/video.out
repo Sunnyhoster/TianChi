@@ -1,0 +1,20 @@
+nohup: ignoring input
+2018-10-14 17:09:51.110415: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-10-14 17:09:51.117896: E tensorflow/core/common_runtime/direct_session.cc:167] Internal: failed initializing StreamExecutor for CUDA device ordinal 0: Internal: failed call to cuDevicePrimaryCtxRetain: CUDA_ERROR_OUT_OF_MEMORY; total memory reported: 11712987136
+video0.mp4 300
+Traceback (most recent call last):
+  File "video.py", line 187, in <module>
+    main()
+  File "video.py", line 183, in main
+    extract_features()
+  File "video.py", line 128, in extract_features
+    af = extract_res(frame_list)
+  File "video.py", line 167, in extract_res
+    with tf.Graph().as_default(), tf.Session(config=sess_config) as sess:
+  File "/home/dian/.virtualenvs/ml/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 1522, in __init__
+    super(Session, self).__init__(target, graph, config=config)
+  File "/home/dian/.virtualenvs/ml/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 638, in __init__
+    self._session = tf_session.TF_NewDeprecatedSession(opts, status)
+  File "/home/dian/.virtualenvs/ml/lib/python3.5/site-packages/tensorflow/python/framework/errors_impl.py", line 516, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.InternalError: Failed to create session.
